@@ -1,8 +1,5 @@
-.venv/pyvenv.cfg:
+init:
 	poetry install
-
-init: .venv/pyvenv.cfg
-.PHONY: init
 
 lint: init
 	poetry run black --check ./
@@ -20,5 +17,5 @@ run: init
 	poetry run python -m qr.qr
 
 clean:
-	poetry --rm
+	rm -rf .venv
 .PHONY: clean
